@@ -3,6 +3,7 @@ name: IBM Cloud Auto Restart test
 on:
 #  push:
 #    branches: [ master ]
+
 #  pull_request:
 #    branches: [ master ]
 #  schedule:
