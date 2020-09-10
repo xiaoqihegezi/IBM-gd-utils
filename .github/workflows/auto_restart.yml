@@ -8,8 +8,8 @@ on:
     - cron: 0 4 * * 5
 #  watch:
 #    types: [started]
- workflow_dispatch:
-   inputs:
+  workflow_dispatch:
+    inputs:
 jobs:
   ibm-cloud-restart:
     runs-on: ubuntu-latest
