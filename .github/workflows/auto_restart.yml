@@ -1,5 +1,4 @@
 name: IBM Cloud Auto Restart
-
 on:
 #  push:
 #    branches: [ master ]
@@ -9,7 +8,8 @@ on:
     - cron: 0 4 * * 5
 #  watch:
 #    types: [started]
-
+ workflow_dispatch:
+   inputs:
 jobs:
   ibm-cloud-restart:
     runs-on: ubuntu-latest
@@ -26,5 +26,5 @@ jobs:
       run: cf l -a https://api.us-south.cf.cloud.ibm.com login -u ${{ secrets.IBM_MAIL }} -p ${{ secrets.IBM_PWD }}
       
     - name: Restart Cloud Foundry APP
-      run: cf restart us-south
+      run: cf restart ${{ secrets.IBM_APP_NAME }}
       
